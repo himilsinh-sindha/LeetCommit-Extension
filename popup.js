@@ -17,7 +17,7 @@ document.getElementById('authorize').addEventListener('click', () => {
   }, function (redirect_url) {
     if (chrome.runtime.lastError || !redirect_url) {
       setStatusMessage('Authorization failed.', 'error');
-      // console.error('Authorization failed:', chrome.runtime.lastError);
+      console.error('Authorization failed:', chrome.runtime.lastError);
       return;
     }
     const code = new URL(redirect_url).searchParams.get('code');
@@ -35,21 +35,21 @@ document.getElementById('authorize').addEventListener('click', () => {
         if (token) {
           chrome.storage.sync.set({ 'githubToken': token }, () => {
             setStatusMessage('Token stored successfully.', 'success');
-            // console.log('Token stored successfully');
+            console.log('Token stored successfully');
             fetchRepositories(token);
           });
         } else {
           setStatusMessage('No token found in response.', 'error');
-          // console.error('No token found in response');
+          console.error('No token found in response');
         }
       })
       .catch(error => {
         setStatusMessage('Failed to exchange code for token.', 'error');
-        // console.error('Failed to exchange code for token:', error);
+        console.error('Failed to exchange code for token:', error);
       });
     } else {
       setStatusMessage('No code found in redirect URL.', 'error');
-      // console.error('No code found in redirect URL');
+      console.error('No code found in redirect URL');
     }
   });
 });
@@ -91,7 +91,7 @@ function fetchRepositories(token) {
     setLoading(false);
     document.getElementById('authorize').textContent = 'Authorize GitHub';
     setStatusMessage('Failed to fetch repositories.', 'error');
-    // console.error(error);
+    console.error(error);
   });
 }
 
@@ -99,7 +99,7 @@ document.getElementById('commit').addEventListener('click', () => {
   chrome.storage.sync.get(['githubToken', 'selectedRepo'], ({ githubToken, selectedRepo }) => {
     if (!githubToken) {
       setStatusMessage('No GitHub token found. Please authorize first.', 'error');
-      // console.error('No GitHub token found. Please authorize first.');
+      console.error('No GitHub token found. Please authorize first.');
       return;
     }
     const repo = document.getElementById('repoSelect').value;
@@ -129,12 +129,12 @@ document.getElementById('commit').addEventListener('click', () => {
       }, (results) => {
         if (chrome.runtime.lastError || !results || !results[0] || results[0].result === null) {
           setStatusMessage('Failed to retrieve code or title from LeetCode.', 'error');
-          // console.error('Failed to retrieve code or title from LeetCode:', chrome.runtime.lastError);
+          console.error('Failed to retrieve code or title from LeetCode:', chrome.runtime.lastError);
           return;
         }
         if (results[0].result.error) {
           setStatusMessage(results[0].result.error, 'error');
-          // console.error(results[0].result.error);
+          console.error(results[0].result.error);
           return;
         }
         const { code, title } = results[0].result;
@@ -175,18 +175,18 @@ document.getElementById('commit').addEventListener('click', () => {
           setLoading(false);
           if (response.ok) {
             setStatusMessage('Code committed successfully.', 'success');
-            // console.log('Code committed successfully');
+            console.log('Code committed successfully');
           } else {
             return response.json().then(data => {
               setStatusMessage('Failed to commit code: ' + data.message, 'error');
-              // console.error('Failed to commit code:', data.message);
+              console.error('Failed to commit code:', data.message);
             });
           }
         })
         .catch(error => {
           setLoading(false);
           setStatusMessage('Error committing code.', 'error');
-          // console.error('Error committing code:', error);
+          console.error('Error committing code:', error);
         });
       });
     });
