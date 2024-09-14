@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCommit",
+  "version": "1.0",
+  "description": "Push LeetCode solutions to GitHub",
+  "permissions": [
+    "identity",
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://api.github.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "oauth2": {
+    "client_id": "Ov23lidlyozRcd1ZTHD2",
+    "scopes": ["repo"]
+  }
+}

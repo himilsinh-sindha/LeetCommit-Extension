@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCommit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      color: #2c3e50;
+      border: 5px solid #2980b9; /* Blue border */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for modern look */
+      max-width: 400px; /* Limit the width of the extension box */
+      margin: 0 auto; /* Center the content */
+    }
+    img {
+      max-width: 80px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #2980b9;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    button:hover {
+      background-color: #1e73b4;
+      transform: translateY(-2px);
+    }
+    .custom-dropdown-container {
+      position: relative;
+      width: 100%;
+    }
+    select.custom-dropdown {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+      color: #2c3e50;
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6z" fill="none" stroke="%23000" stroke-width="2"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 24px;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 1em;
+      color: #7f8c8d;
+    }
+    .loading {
+      display: none;
+      margin-top: 15px;
+    }
+    .loading img {
+      width: 25px;
+      height: 25px;
+    }
+  </style>
+</head>
+<body>
+  <img src="images/icon48.png" alt="LeetCommit Logo">
+
+  <h1>LeetCommit</h1>
+
+  <button id="authorize">Authorize GitHub</button>
+  <div class="custom-dropdown-container">
+    <select id="repoSelect" class="custom-dropdown">
+      <option value="">Select Repository</option>
+    </select>
+  </div>
+  <button id="commit">Commit to GitHub</button>
+  <div class="status" id="statusMessage"></div>
+  <div class="loading" id="loadingIndicator">
+    <img src="loading.gif" alt="Loading...">
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
