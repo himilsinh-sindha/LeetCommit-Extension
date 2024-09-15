@@ -5,15 +5,14 @@
   <i>Automate Your LeetCode Submissions to GitHub 🚀</i>
 </p>
 
+**LeetCommit** is a Chrome extension designed to streamline the process of saving and managing your LeetCode solutions. By integrating directly with GitHub, this extension allows developers to automatically commit their LeetCode code submissions to their GitHub repositories, making it easier to track progress and maintain a personal code repository.
 
-**LeetCommit** is a Chrome extension that allows you to commit your LeetCode solutions directly to your GitHub repository. This extension simplifies the process of saving your coding solutions by automating the commit process.
+## Key Features
 
-## Features
-
-- **Authorize with GitHub** to access your repositories (authorization needed only once). The extension saves your authorization details and the last selected repository for convenience. 🔑
-- **Automatically fetch the problem title** and use it as the filename. (Currently, it supports only C++ code.) 📄
-- **Commit your LeetCode solutions** with a single click. ✅
-- **Update existing solutions** if the file already exists in the repository. 🔄
+- **One-Time Authorization**: Authorize with GitHub just once and the extension will remember your details and last selected repository. 🔑
+- **Automatic Filename Generation**: Fetches the problem title from LeetCode and uses it as the filename for the committed code (currently supports C++ only). 📄
+- **Effortless Commit**: Push your LeetCode solutions to GitHub with a single click. ✅
+- **Update Existing Solutions**: If a solution with the same filename already exists in your repository, it will be updated. 🔄
 
 ## Screenshots
 
