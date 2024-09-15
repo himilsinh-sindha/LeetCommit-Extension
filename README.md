@@ -84,3 +84,8 @@ If you encounter any problems while using **LeetCommit**, feel free to open an i
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/himilsinh-sindha/LeetCommit-Extension/blob/main/LICENSE) file for details.
+
+---
+
+If you find **LeetCommit** useful, please consider giving it a ⭐️ on GitHub to support its development and future improvements!
+
