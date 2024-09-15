@@ -10,9 +10,8 @@
 
 ## Features
 
-- **Authorize with GitHub** to access your repositories.
-- **Select a repository** to commit your solutions.
-- **Automatically fetch the problem title** and use it as the filename. (Currently,it supports only CPP)
+- **Authorize with GitHub** to access your repositories (authorization needed only once). The extension saves your authorization details and the last selected repository for convenience.
+- **Automatically fetch the problem title** and use it as the filename. (Currently, it supports only C++ code.)
 - **Commit your LeetCode solutions** with a single click.
 - **Update existing solutions** if the file already exists in the repository.
 
