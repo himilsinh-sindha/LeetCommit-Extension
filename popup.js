@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Load saved GitHub token and repository on extension load
   chrome.storage.sync.get(['githubToken', 'selectedRepo'], ({ githubToken, selectedRepo }) => {
     if (githubToken) {
       setStatusMessage('GitHub token already stored.', 'success');
@@ -145,7 +144,6 @@ document.getElementById('commit').addEventListener('click', () => {
         }
         setLoading(true);
 
-        // Check if the file already exists
         fetch(`https://api.github.com/repos/${currentRepo}/contents/${title}`, {
           headers: {
             'Authorization': `token ${githubToken}`
@@ -153,15 +151,14 @@ document.getElementById('commit').addEventListener('click', () => {
         })
         .then(response => response.json())
         .then(data => {
-          const sha = data.sha; // Get SHA if the file exists
+          const sha = data.sha; 
           const body = {
             message: 'Solved ' + title,
-            content: btoa(code) // Base64 encoding of the code
+            content: btoa(code)
           };
           if (sha) {
-            body.sha = sha; // Include SHA for updating the file
+            body.sha = sha;
           }
-          // Create or update the file
           return fetch(`https://api.github.com/repos/${currentRepo}/contents/${title}`, {
             method: 'PUT',
             headers: {
@@ -197,13 +194,12 @@ function setStatusMessage(message, type) {
   const statusMessage = document.getElementById('statusMessage');
   statusMessage.textContent = message;
 
-  // Apply styles based on message type
   if (type === 'success') {
     statusMessage.style.color = 'green';
   } else if (type === 'error') {
     statusMessage.style.color = 'red';
   } else {
-    statusMessage.style.color = '#7f8c8d'; // Default color for info
+    statusMessage.style.color = '#7f8c8d';
   }
 }
 
