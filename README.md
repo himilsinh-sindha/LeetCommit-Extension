@@ -16,8 +16,6 @@
 - **Commit your LeetCode solutions** with a single click.
 - **Update existing solutions** if the file already exists in the repository.
 
-  ---
-
 ## Screenshots
 
 Here are some screenshots showcasing the features of **LeetCommit**:
@@ -42,10 +40,6 @@ Here are some screenshots showcasing the features of **LeetCommit**:
   </tr>
 </table>
 
-
-
----
-
 ## Installation
 
 ### Install from GitHub
@@ -64,20 +58,15 @@ Here are some screenshots showcasing the features of **LeetCommit**:
 
 5. The **LeetCommit** extension will now appear in your Chrome extensions list.
 
-### Set Up GitHub Authentication
-
-1. After installing the extension, open **LeetCommit** by clicking on its icon in the Chrome toolbar.
-2. Enter your **GitHub personal access token** to enable the extension to push code on your behalf. If you do not have a token, you can create one by following these steps:
-   - Go to [GitHub Developer Settings](https://github.com/settings/tokens).
-   - Click on **Generate new token**, and make sure to enable `repo` access.
-   - Copy the generated token and paste it into the extension.
-3. Customize your GitHub repository name, commit message format, and file naming conventions in the settings panel.
-
 ## Usage
 
-1. Solve any problem on [LeetCode](https://leetcode.com).
-2. Open **LeetCommit** and choose the problem solution you want to push to GitHub.
-3. Click **Push to GitHub**, and the solution will be automatically committed and pushed to your configured GitHub repository.
+1. **Solve a Problem on LeetCode**: Go to [LeetCode](https://leetcode.com) and solve any problem.
+2. **Submit Your Solution**: After solving the problem, ensure it is successfully submitted and the code along with the analysis is visible on the screen.
+3. **Open LeetCommit**: Click on the **LeetCommit** extension icon in your browser toolbar.
+4. **Select Repository**: Choose the GitHub repository where you want to commit your solution.
+5. **Commit to GitHub**: Click on **Commit to GitHub**. Your solution will be automatically committed and pushed to the selected GitHub repository.
+
+   - **Note**: If there is no successfully submitted code on LeetCode, the extension will display an error message: **"No code on screen"**.
 
 ## Contributing
 
