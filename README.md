@@ -27,17 +27,17 @@ Here are some screenshots showcasing the features of **LeetCommit**:
     <td align="center">
       <img alt="LeetCommit Dashboard" src="./images/startup.png" width="150" style="max-width: 100%; height: auto;"/>
       <br/>
-      <i>LeetCommit dashboard for selecting a repository and pushing solutions</i>
+      <i>LeetCommit Startup Interface</i>
     </td>
     <td align="center">
-      <img alt="LeetCommit Authorization" src="./images/permission.png" width="450" style="max-width: 100%; height: auto;"/>
+      <img alt="LeetCommit Authorization" src="./images/permission.png" width="265" style="max-width: 100%; height: auto;"/>
       <br/>
-      <i>GitHub authorization interface</i>
+      <i>GitHub Authorization</i>
     </td>
     <td align="center">
       <img alt="LeetCommit Success Message" src="./images/commitsuccess.png" width="150" style="max-width: 100%; height: auto;"/>
       <br/>
-      <i>Success message after pushing the solution to GitHub</i>
+      <i>After Successful Commit</i>
     </td>
   </tr>
 </table>
