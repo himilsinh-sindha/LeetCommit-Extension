@@ -1,3 +1,5 @@
+![LeetCommit Banner](./images/icon128.png)
+
 # 🎯 **LeetCommit** - Automate Your LeetCode Submissions to GitHub 🚀
 
 **LeetCommit** is a Chrome extension that allows you to commit your LeetCode solutions directly to your GitHub repository. This extension simplifies the process of saving your coding solutions by automating the commit process.
