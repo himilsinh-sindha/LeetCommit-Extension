@@ -1,13 +1,13 @@
 <p align="center">
-<img alt="" src="./images/icon128.png"/>
+  <img alt="LeetCommit Icon" src="./images/icon128.png" width="128" height="128"/>
 </p>
+
+<h1 align="center">LeetCommit - Automate Your LeetCode Submissions to GitHub 🚀</h1>
+
 <p align="center">
-  <h1 align="center">LeetCommit</h1>
+  <strong>LeetCommit</strong> is a Chrome extension that allows you to commit your LeetCode solutions directly to your GitHub repository. This extension simplifies the process of saving your coding solutions by automating the commit process.
 </p>
 
-# 🎯 **LeetCommit** - Automate Your LeetCode Submissions to GitHub 🚀
-
-**LeetCommit** is a Chrome extension that allows you to commit your LeetCode solutions directly to your GitHub repository. This extension simplifies the process of saving your coding solutions by automating the commit process.
 
 ## Features
 
