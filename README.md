@@ -1,6 +1,3 @@
-![LeetCommit Banner](./images/icon128.png)
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p align="center">
 <img alt="" src="./images/icon128.png"/>
 </p>
