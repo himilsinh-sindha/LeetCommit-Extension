@@ -10,10 +10,10 @@
 
 ## Features
 
-- **Authorize with GitHub** to access your repositories (authorization needed only once). The extension saves your authorization details and the last selected repository for convenience.
-- **Automatically fetch the problem title** and use it as the filename. (Currently, it supports only C++ code.)
-- **Commit your LeetCode solutions** with a single click.
-- **Update existing solutions** if the file already exists in the repository.
+- **Authorize with GitHub** to access your repositories (authorization needed only once). The extension saves your authorization details and the last selected repository for convenience. 🔑
+- **Automatically fetch the problem title** and use it as the filename. (Currently, it supports only C++ code.) 📄
+- **Commit your LeetCode solutions** with a single click. ✅
+- **Update existing solutions** if the file already exists in the repository. 🔄
 
 ## Screenshots
 
@@ -24,17 +24,17 @@ Here are some screenshots showcasing the features of **LeetCommit**:
     <td align="center">
       <img alt="LeetCommit Dashboard" src="./images/startup.png" width="150" style="max-width: 100%; height: auto;"/>
       <br/>
-      <i>LeetCommit Startup Interface</i>
+      <i>LeetCommit Startup Interface 🌟</i>
     </td>
     <td align="center">
       <img alt="LeetCommit Authorization" src="./images/permission.png" width="265" style="max-width: 100%; height: auto;"/>
       <br/>
-      <i>GitHub Authorization</i>
+      <i>GitHub Authorization 🔓</i>
     </td>
     <td align="center">
       <img alt="LeetCommit Success Message" src="./images/commitsuccess.png" width="150" style="max-width: 100%; height: auto;"/>
       <br/>
-      <i>After Successful Commit</i>
+      <i>After Successful Commit 🎉</i>
     </td>
   </tr>
 </table>
@@ -59,13 +59,13 @@ Here are some screenshots showcasing the features of **LeetCommit**:
 
 ## Usage
 
-1. **Solve a Problem on LeetCode**: Go to [LeetCode](https://leetcode.com) and solve any problem.
-2. **Submit Your Solution**: After solving the problem, ensure it is successfully submitted and the code along with the analysis is visible on the screen.
-3. **Open LeetCommit**: Click on the **LeetCommit** extension icon in your browser toolbar.
-4. **Select Repository**: Choose the GitHub repository where you want to commit your solution.
-5. **Commit to GitHub**: Click on **Commit to GitHub**. Your solution will be automatically committed and pushed to the selected GitHub repository.
+1. **Solve a Problem on LeetCode**: Go to [LeetCode](https://leetcode.com) and solve any problem. 🧩
+2. **Submit Your Solution**: After solving the problem, ensure it is successfully submitted and the code along with the analysis is visible on the screen. 📝
+3. **Open LeetCommit**: Click on the **LeetCommit** extension icon in your browser toolbar. 🔧
+4. **Select Repository**: Choose the GitHub repository where you want to commit your solution. 📂
+5. **Commit to GitHub**: Click on **Commit to GitHub**. Your solution will be automatically committed and pushed to the selected GitHub repository. 🚀
 
-   - **Note**: If there is no successfully submitted code on LeetCode, the extension will display an error message: **"No code on screen"**.
+   - **Note**: If there is no successfully submitted code on LeetCode, the extension will display an error message: **"No code on screen"**. ⚠️
 
 ## Contributing
 
@@ -79,13 +79,13 @@ Contributions are always welcome! If you’d like to improve this project:
 
 ## Issues
 
-If you encounter any problems while using **LeetCommit**, feel free to open an issue [here](https://github.com/himilsinh-sindha/LeetCommit-Extension/issues).
+If you encounter any problems while using **LeetCommit**, feel free to open an issue [here](https://github.com/himilsinh-sindha/LeetCommit-Extension/issues). 🐛
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/himilsinh-sindha/LeetCommit-Extension/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/himilsinh-sindha/LeetCommit-Extension/blob/main/LICENSE) file for details. 📜
 
 ---
 
-If you find **LeetCommit** useful, please consider giving it a ⭐️ on GitHub to support its development and future improvements!
+If you find **LeetCommit** useful, please consider giving it a ⭐️ on GitHub to support its development and future improvements! 🙌
 
