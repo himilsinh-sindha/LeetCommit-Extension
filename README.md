@@ -2,7 +2,7 @@
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p align="center">
-<img width="60" height="68" alt="" src="./images/icon128.png"/>
+<img alt="" src="./images/icon128.png"/>
 </p>
 <p align="center">
   <h1 align="center">LeetCommit</h1>
