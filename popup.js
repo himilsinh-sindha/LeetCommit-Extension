@@ -113,11 +113,34 @@ document.getElementById('commit').addEventListener('click', () => {
       chrome.scripting.executeScript({
         target: { tabId: tabs[0].id },
         func: () => {
-          const codeElement = document.querySelector('code.language-cpp');
+          const codeLanguageElement = document.querySelector('.flex.items-center.gap-2.pb-2.text-sm.font-medium.text-text-tertiary.dark\\:text-text-tertiary');
+          if (!codeLanguageElement) {
+            console.error('Failed to find the code language element');
+            return { error: 'Failed to find the code language element' };
+          }
+          const codeLanguage = codeLanguageElement.textContent.replace("Code", "");
+          console.log("Selected Code Language:", codeLanguage);
+          const languageToExtensionMap = {
+            'C++': { extension: 'cpp', className: 'language-cpp' },
+            'Python': { extension: 'py', className: 'language-python' },
+            'Python3': { extension: 'py', className: 'language-python' },
+            'JavaScript': { extension: 'js', className: 'language-javascript' },
+            'Java': { extension: 'java', className: 'language-java' },
+          };
+          const languageDetails = languageToExtensionMap[codeLanguage];
+          if (!languageDetails) {
+            return { error: 'Unsupported or unknown programming language' };
+          }
+          console.log("Selected Language Details :", languageDetails);
+          const fileExtension = languageDetails.extension;
+          const languageClass = languageDetails.className;
+          const codeElement = document.querySelector(`code.${languageClass}`);
+          console.log("Selected Code Language:", codeElement);
           const titleElement = document.querySelector('.text-title-large a');
-          if (codeElement && titleElement) {
+          if (codeElement && titleElement && fileExtension) {
             const code = codeElement.textContent;
-            const title = titleElement.textContent.trim().replace(/\s+/g, '_') + '.cpp';
+            const title = titleElement.textContent.trim().replace(/\s+/g, '_') + '.' + fileExtension;
+            console.log("Title", title);
             return { code, title };
           } else if (!codeElement) {
             return { error: 'No code on screen' };
