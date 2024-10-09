@@ -119,7 +119,7 @@ document.getElementById('commit').addEventListener('click', () => {
             return { error: 'Failed to find the code language element' };
           }
           const codeLanguage = codeLanguageElement.textContent.replace("Code", "");
-          console.log("Selected Code Language:", codeLanguage);
+          // console.log("Selected Code Language:", codeLanguage);
           const languageToExtensionMap = {
             'C++': { extension: 'cpp', className: 'language-cpp' },
             'Python': { extension: 'py', className: 'language-python' },
@@ -131,16 +131,16 @@ document.getElementById('commit').addEventListener('click', () => {
           if (!languageDetails) {
             return { error: 'Unsupported or unknown programming language' };
           }
-          console.log("Selected Language Details :", languageDetails);
+          // console.log("Selected Language Details :", languageDetails);
           const fileExtension = languageDetails.extension;
           const languageClass = languageDetails.className;
           const codeElement = document.querySelector(`code.${languageClass}`);
-          console.log("Selected Code Language:", codeElement);
+          // console.log("Selected Code Language:", codeElement);
           const titleElement = document.querySelector('.text-title-large a');
           if (codeElement && titleElement && fileExtension) {
             const code = codeElement.textContent;
             const title = titleElement.textContent.trim().replace(/\s+/g, '_') + '.' + fileExtension;
-            console.log("Title", title);
+            // console.log("Title", title);
             return { code, title };
           } else if (!codeElement) {
             return { error: 'No code on screen' };
