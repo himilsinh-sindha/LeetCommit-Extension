@@ -10,9 +10,11 @@
 ## Key Features
 
 - **One-Time Authorization**: Authorize with GitHub just once and the extension will remember your details and last selected repository. 🔑
-- **Automatic Filename Generation**: Fetches the problem title from LeetCode and uses it as the filename for the committed code (currently supports C++ only). 📄
+- **Automatic Filename Generation**: Fetches the problem title from LeetCode and uses it as the filename for the committed code (currently supports C++,Java,Python,Python3 and JavaScript only). 📄
 - **Effortless Commit**: Push your LeetCode solutions to GitHub with a single click. ✅
-- **Update Existing Solutions**: If a solution with the same filename already exists in your repository, it will be updated. 🔄
+- **Update Existing Solutions**: If a solution with the same filename already exists in your repository, it will be updated. If it doesn't exist, a new file will be created. 🔄
+- **Folder Management**: Automatically creates the required folder for organizing your solutions if it doesn't already exist. 📁
+- **Error Handling**: Comprehensive error handling to provide clear feedback on the commit status, ensuring users are informed of success or failure. ❗️
 
 ## Screenshots
 
