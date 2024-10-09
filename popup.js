@@ -134,6 +134,7 @@ document.getElementById('commit').addEventListener('click', () => {
           // console.log("Selected Language Details :", languageDetails);
           const fileExtension = languageDetails.extension;
           const languageClass = languageDetails.className;
+          const folderName = codeLanguage;
           const codeElement = document.querySelector(`code.${languageClass}`);
           // console.log("Selected Code Language:", codeElement);
           const titleElement = document.querySelector('.text-title-large a');
@@ -141,7 +142,7 @@ document.getElementById('commit').addEventListener('click', () => {
             const code = codeElement.textContent;
             const title = titleElement.textContent.trim().replace(/\s+/g, '_') + '.' + fileExtension;
             // console.log("Title", title);
-            return { code, title };
+            return { code, title,folderName };
           } else if (!codeElement) {
             return { error: 'No code on screen' };
           } else {
@@ -159,7 +160,7 @@ document.getElementById('commit').addEventListener('click', () => {
           console.error(results[0].result.error);
           return;
         }
-        const { code, title } = results[0].result;
+        const { code, title,folderName } = results[0].result;
         const currentRepo = repo || selectedRepo;
         if (!currentRepo) {
           setStatusMessage('No repository selected.', 'error');
@@ -167,29 +168,69 @@ document.getElementById('commit').addEventListener('click', () => {
         }
         setLoading(true);
 
-        fetch(`https://api.github.com/repos/${currentRepo}/contents/${title}`, {
+        fetch(`https://api.github.com/repos/${currentRepo}/contents/${folderName}`, {
           headers: {
             'Authorization': `token ${githubToken}`
           }
         })
-        .then(response => response.json())
-        .then(data => {
-          const sha = data.sha; 
+        .then(response => {
+          if (response.status === 404) {
+            const createFolderBody = {
+              message: `Create ${folderName} folder`,
+              content: btoa(''),
+              path: `${folderName}/README.md` 
+            };
+            return fetch(`https://api.github.com/repos/${currentRepo}/contents/${folderName}/README.md`, {
+              method: 'PUT',
+              headers: {
+                'Authorization': `token ${githubToken}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(createFolderBody)
+            });
+          } else {
+            // Folder exists, now commit the code
+            return response.json();
+          }
+        })
+        .then(() => {
+          // Check if the file exists before updating it
+          return fetch(`https://api.github.com/repos/${currentRepo}/contents/${folderName}/${title}`, {
+            headers: {
+              'Authorization': `token ${githubToken}`
+            }
+          });
+        })
+        .then(response => {
           const body = {
             message: 'Solved ' + title,
-            content: btoa(code)
+            content: btoa(code),
+            path: `${folderName}/${title}`
           };
-          if (sha) {
-            body.sha = sha;
+        
+          if (response.ok) {
+            return response.json().then(data => {
+              body.sha = data.sha; 
+              return fetch(`https://api.github.com/repos/${currentRepo}/contents/${folderName}/${title}`, {
+                method: 'PUT',
+                headers: {
+                  'Authorization': `token ${githubToken}`,
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+              });
+            });
+          } else if (response.status === 404) {
+            // File doesn't exist, create it
+            return fetch(`https://api.github.com/repos/${currentRepo}/contents/${folderName}/${title}`, {
+              method: 'PUT',
+              headers: {
+                'Authorization': `token ${githubToken}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(body)
+            });
           }
-          return fetch(`https://api.github.com/repos/${currentRepo}/contents/${title}`, {
-            method: 'PUT',
-            headers: {
-              'Authorization': `token ${githubToken}`,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-          });
         })
         .then(response => {
           setLoading(false);
